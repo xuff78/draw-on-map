@@ -2,7 +2,7 @@ import { getExtent } from '#/utils/geo'
 // import { loadImgs } from '../utils/images'
 import VectorObject from '../obj/vector-object'
 
-window.mapboxgl.accessToken = 'pk.eyJ1IjoibWFwYm94IiwiYSI6ImNpejY4M29iazA2Z2gycXA4N2pmbDZmangifQ.-g_vE53SD2WrJ6tFX7QHmA'
+window.mapboxgl.accessToken = 'pk.eyJ1IjoieHV5aWNoYW8xMjM0IiwiYSI6ImNqeDVod2IwZjAyNXg0YXBvdWJkcXVuejIifQ.EMtViDDUKAhPAD9bnOdBfA'
 const defaultOptions = {
     zoom: 11, //初始化地图层级
     maxZoom: 18,
