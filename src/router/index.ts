@@ -25,6 +25,11 @@ const list: RouteRecordRaw[] = [
     path: '/polygon',
     name: 'polygon',
     component: () => import('@/views/polygon/index.vue'),
+  },
+  {
+    path: '/heatmap',
+    name: 'heatmap',
+    component: () => import('@/views/heatmap/index.vue'),
   }
 ]
 

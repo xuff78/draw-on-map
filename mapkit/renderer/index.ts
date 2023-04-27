@@ -103,6 +103,10 @@ export class ReglRendererService {
     }
   }
 
+  // public getGL = () => {
+  //   return this.gl
+  // }
+
   public getGLContext = () => {
     return this.gl._gl
   }

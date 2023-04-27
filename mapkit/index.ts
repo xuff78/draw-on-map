@@ -7,6 +7,7 @@ import ShapePoint from '#/obj/shape'
 import Polygon from '#/obj/polygon'
 import Line from '#/obj/line'
 import Map from '#/services/map'
+import HeatmapLayer from '#/layer/HeatmapLayer'
 
 function init(id: string, options, cb) {
   const map = new Map(id, options,  () => {
@@ -20,6 +21,7 @@ export default {
   Polygon,
   Line,
   MassLayer,
+  HeatmapLayer,
   ShapeLayer,
   PolygonLayer,
   LineLayer,

@@ -49,7 +49,7 @@ export default class BaseModel {
   setPickId(id: number) {
     this.pickId = id === null ? [-1, -1, -1] : encodePickingColor(id)
   }
-  getBufferProps(useFBO = false) {
+  getBufferProps(usePickFBO = false) {
     const projectUniforms = getProjectUniforms(this.sdkRenderer.getGLContext(), this.mapServices.getCameraPosition())
     const props = {
       ...this.attributes,
@@ -58,7 +58,7 @@ export default class BaseModel {
     }
     if (this.supportPick) {
       const pickProps = {
-        u_for_fbo: useFBO,
+        u_for_fbo: usePickFBO,
         u_use_highlight: this.options.hover.useMouseHover,
         u_highlight_color: this.hlc,
         u_highlight_id: this.pickId,

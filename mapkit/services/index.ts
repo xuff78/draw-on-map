@@ -37,8 +37,13 @@ export class MapServices {
       center: this.map.getCenter(),
     }
   }
-
   getZoom() {
     return this.map.getZoom()
+  }
+  getBounds() {
+    return this.map.getBounds()
+  }
+  getViewMatrix() {
+    return this.map.transform.projMatrix
   }
 }

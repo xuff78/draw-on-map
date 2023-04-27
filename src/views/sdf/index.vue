@@ -8,10 +8,11 @@ import MapKit from '#'
 import axios from 'axios'
 import bearing from '@turf/bearing'
 import { point as toPoint } from '@turf/helpers'
-const allcolors = ['#1068BF', '#FFA500', '#00964f', '#4D26BF', '#FF8C69', '#666666', '#CDAF95', '#FF7364', '#2EB8B8']
+const allcolors = ['#2068BF', '#FFA500', '#00964f', '#4D26BF', '#FF8C69', '#666666', '#CDAF95', '#FF7364', '#2EB8B8']
 let map
 const handleGetMap = async (mapValue) => {
   map = mapValue
+  console.log('map', map)
   addSDF()
 }
 

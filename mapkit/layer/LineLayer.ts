@@ -1,18 +1,13 @@
 import BaseLayer from '#/layer/BaseLayer'
-import { ShapeOptions } from '#/layer/models/interface'
 import LineModel from '#/layer/models/line'
 import VectorObject from '#/obj/vector-object'
-
-const getDefaultOptions = (options?: Partial<ShapeOptions>): Partial<ShapeOptions> => {
-  return Object.assign({ gradualArrow: true }, options)
-}
+import {LayerOptions} from '#/layer/interface'
 
 export default class LineLayer extends BaseLayer {
-  constructor(map, options?: Partial<ShapeOptions>) {
-    const _options = getDefaultOptions(options)
+  constructor(map, options?: Partial<LayerOptions>) {
     const mapServices = map.MapKitServices
     const shapeModel = new LineModel(mapServices)
-    super(shapeModel, mapServices, _options)
+    super(shapeModel, mapServices, options || {})
   }
 
   setData(datas: VectorObject[]) {

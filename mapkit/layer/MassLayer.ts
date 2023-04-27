@@ -1,10 +1,9 @@
 import BaseLayer from '#/layer/BaseLayer'
-import { ShapeOptions } from '#/layer/models/interface'
 import MassModel from '#/layer/models/mass'
-import {MassImage, MassPoint} from '#/layer/interface'
+import {LayerOptions, MassImage, MassPoint} from '#/layer/interface'
 
 export default class MassLayer extends BaseLayer {
-    constructor(map, options?: Partial<ShapeOptions>) {
+    constructor(map, options?: Partial<LayerOptions>) {
         const mapServices = map.MapKitServices
         const shapeModel = new MassModel(mapServices)
         super(shapeModel, mapServices, options || {})

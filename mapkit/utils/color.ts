@@ -17,3 +17,31 @@ export function hexToRgb(hex, opacity) {
     ? [parseInt(result[1], 16), parseInt(result[2], 16), parseInt(result[3], 16), parseInt(opacity * 255)]
     : [0, 0, 0, 255]
 }
+
+export function getGradientImage(colors) {
+  const interpolateColor = colors.map((item) => ({
+    key: item[0],
+    value: item[1],
+  }))
+
+  const canvas = document.createElement('canvas')
+  const ctx = canvas.getContext('2d')
+
+  canvas.width = 256
+  canvas.height = 1
+
+  if (ctx) {
+    const gradient = ctx.createLinearGradient(0, 0, 256, 0)
+
+    for (let i = 0; i < interpolateColor.length; i += 1) {
+      const key = interpolateColor[i].key
+      const color = interpolateColor[i].value
+      gradient.addColorStop(key, color)
+    }
+
+    ctx.fillStyle = gradient
+    ctx.fillRect(0, 0, 256, 1)
+    return canvas
+  }
+  return canvas
+}
